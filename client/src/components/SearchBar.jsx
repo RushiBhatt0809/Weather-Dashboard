@@ -8,12 +8,12 @@ function SearchBar({ onSearch }) {
         const trimmed = input.trim();
         if (!trimmed) return;
         onSearch(trimmed);
-        setInput('')
+        setInput('');
     };
 
     return (
-        <div className="mt-4 px-2">
-            <form onSubmit={handleSubmit} className="flex gap-6">
+        <div className="p-4">
+            <form onSubmit={handleSubmit} className="flex gap-6 w-full md:w-1/2 lg:1/4 ">
                 <input
                     className="pr-2 border rounded-sm"
                     type="text"

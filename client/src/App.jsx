@@ -34,14 +34,19 @@ function App() {
     }
   };
 
+  console.log("THis is weahter data", weatherData);
+  console.log("This is forecast data", forecastData);
+
   return (
-    <div className="">
+    <div className="min-h-screen bg-slate-100 px-2">
       <SearchBar onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      {weatherData && <CurrentWeather data={weatherData} />}
-      {forecastData && <ForecastList data={forecastData} />}
+      <div className="">
+        {weatherData && <CurrentWeather data={weatherData} />}
+        {forecastData && <ForecastList data={forecastData} />}
+      </div>
     </div>
   )
 }
