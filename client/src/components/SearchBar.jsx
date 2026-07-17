@@ -12,16 +12,17 @@ function SearchBar({ onSearch }) {
     };
 
     return (
-        <div className="p-4">
-            <form onSubmit={handleSubmit} className="flex gap-6 w-full md:w-1/2 lg:1/4 ">
+        <div className="max-w-4xl mx-auto p-6">
+            <form onSubmit={handleSubmit} className="flex gap-3">
                 <input
-                    className="pr-2 border rounded-sm"
+                    className="flex-1 border rounded-xl px-4 py-1 outline-none focus:border-amber-400 focus:ring-1 focus:ring-orange-700"
                     type="text"
                     value={input}
+                    placeholder="Search Cities..."
                     onChange={(e) => setInput(e.target.value)}
                 />
                 <button
-                    className="px-2 rounded-lg bg-blue-400 text-white hover:bg-blue-500"
+                    className="px-6 rounded-xl bg-orange-400 text-white hover:bg-orange-500 transition hover:cursor-pointer"
                     type="Submit">Search</button>
             </form>
         </div>

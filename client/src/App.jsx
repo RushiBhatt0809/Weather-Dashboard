@@ -3,6 +3,7 @@ import axios from 'axios';
 import CurrentWeather from "./components/CurrentWeather"
 import ForecastList from "./components/ForecastList"
 import SearchBar from "./components/SearchBar"
+import WeatherHighlights from "./components/WeatherHighlights";
 
 function App() {
   const [city, setCity] = useState('');
@@ -38,15 +39,26 @@ function App() {
   console.log("This is forecast data", forecastData);
 
   return (
-    <div className="min-h-screen bg-slate-100 px-2">
+    <div className="min-h-screen bg-[#0f172a]">
       <SearchBar onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      <div className="">
-        {weatherData && <CurrentWeather data={weatherData} />}
-        {forecastData && <ForecastList data={forecastData} />}
-      </div>
+      {weatherData && forecastData && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+
+          <div className="space-y-6">
+            <CurrentWeather data={weatherData} />
+            <WeatherHighlights data={weatherData} />
+          </div>
+
+          <div className="lg:col-span-2 space-y-6">
+            <ForecastList data={forecastData} />
+            {/* <SunriseSunset data={weatherData} /> */}
+          </div>
+
+        </div>
+      )}
     </div>
   )
 }
