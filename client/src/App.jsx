@@ -4,6 +4,8 @@ import CurrentWeather from "./components/CurrentWeather"
 import ForecastList from "./components/ForecastList"
 import SearchBar from "./components/SearchBar"
 import WeatherHighlights from "./components/WeatherHighlights";
+import SunriseSunset from "./components/SunriseSunset";
+import TempChart from "./components/TempChart";
 
 function App() {
   const [city, setCity] = useState('');
@@ -50,11 +52,12 @@ function App() {
           <div className="space-y-6">
             <CurrentWeather data={weatherData} />
             <WeatherHighlights data={weatherData} />
+            <SunriseSunset data={weatherData} />
           </div>
 
-          <div className="lg:col-span-2 space-y-6">
+          <div className=" -translate-y-1 lg:col-span-2 space-y-6">
             <ForecastList data={forecastData} />
-            {/* <SunriseSunset data={weatherData} /> */}
+            <TempChart data={forecastData} />
           </div>
 
         </div>

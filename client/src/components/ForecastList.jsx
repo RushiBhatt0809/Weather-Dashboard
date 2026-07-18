@@ -38,7 +38,7 @@ function ForecastList({ data }) {
 
 
     return (
-        <div className="bg-[#1e293b] rounded-2xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pb-4 shadow-xl hover:-translate-y-1 hover:scale-100 transition" >
+        <div className="bg-slate-800 rounded-2xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pb-4 shadow-xl hover:-translate-y-1 hover:scale-100 transition" >
             {mapping}
         </div>
     );

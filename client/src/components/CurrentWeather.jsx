@@ -12,8 +12,11 @@ function CurrentWeather({ data }) {
 
     return (
         <div className="flex flex-col shadow-xl rounded-2xl bg-linear-to-r from-amber-400 to-[#f17d10] hover:scale-105 transition duration-300">
-            <div className="flex w-full justify-between px-4 my-2">
-                <p className="font-bold text-xl"> <FiMapPin /> {data.name}</p>
+            <div className="flex w-full justify-between px-2 my-2">
+                <div className="flex gap-1.5">
+                    <FiMapPin className="w-5 h-5 translate-1" />
+                    <p className="font-bold text-xl">{data.name}</p>
+                </div>
                 <p>{formattedDate}</p>
             </div>
             <div className="flex justify-evenly p-4">
