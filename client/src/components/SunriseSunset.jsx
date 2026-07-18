@@ -4,12 +4,20 @@ function SunriseSunset({ data }) {
     const sunriseTime = data.sys.sunrise;
     const sunsetTime = data.sys.sunset;
 
-    function correctTime(date) {
-        const time = new Date(date * 1000);
-        return time.toLocaleTimeString("en-IN", {
-            timeStyle: "short"
-        });
+    function correctTime(unixTime) {
+
+        const timezoneOffset = data.timezone;
+
+        const utc = new Date((unixTime + timezoneOffset) * 1000);
+
+        return new Intl.DateTimeFormat("en-US", {
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+            timeZone: "UTC",
+        }).format(utc);
     }
+
     return (
         <div className="flex gap-4 justify-between py-2 pl-2 pr-8 lg:flex-col xl:flex-row xl:gap-4 bg-slate-800 rounded-2xl">
             <div className="flex items-center">

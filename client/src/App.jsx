@@ -41,7 +41,8 @@ function App() {
   console.log("This is forecast data", forecastData);
 
   return (
-    <div className="min-h-screen bg-[#0f172a]">
+
+    <div className="min-h-screen bg-[#0f172a] max-w-[2000px] mx-auto p-6">
       <SearchBar onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
